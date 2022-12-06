@@ -19,8 +19,12 @@ import static org.junit.jupiter.api.TestInstance.Lifecycle.PER_CLASS;
 //todo
 @TestInstance(PER_CLASS)
 public class SeleniumTest {
+
     private BrowserGetter browserGetter = new BrowserGetter();
+    //Para escolher o browser para abir
+
     private WebDriver driver;
+    //Para interagir com o browser
 
     @BeforeAll
     public void beforeAll() {
