@@ -5,6 +5,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 
+import static java.lang.System.console;
 import static java.lang.System.setProperty;
 import static org.apache.commons.lang3.SystemUtils.*;
 
@@ -16,7 +17,9 @@ public class BrowserGetter {
      */
 
     public WebDriver getWinChromeDriver() {
-        setProperty("webdriver.chrome.driver", "src/test/resources/browserBinaries/chromedriver.exe");
+        //setProperty("webdriver.chrome.driver", "src/test/resources/browserBinaries/chromedriver.exe");
+        setProperty("webdriver.chrome.driver", "/usr/bin/chromedriver");
+
         WebDriver driver = new ChromeDriver();
         driver.manage().window().maximize();
         return driver;
@@ -30,7 +33,8 @@ public class BrowserGetter {
             setProperty("webdriver.chrome.driver", "src/test/resources/browserBinaries/chromedriver.exe");
         }
         if (IS_OS_LINUX) {
-            setProperty("webdriver.chrome.driver", "src/test/resources/browserBinaries/chromedriver");
+            // setProperty("webdriver.chrome.driver", "src/test/resources/browserBinaries/chromedriver");
+            setProperty("webdriver.chrome.driver", "/usr/bin/chromedriver");
         }
         if (IS_OS_MAC) {
             setProperty("webdriver.chrome.driver", "src/test/resources/browserBinaries/chromedriverMac");
@@ -81,7 +85,8 @@ public class BrowserGetter {
             setProperty("webdriver.chrome.driver", "src/test/resources/browserBinaries/chromedriver.exe");
         }
         if (IS_OS_LINUX) {
-            setProperty("webdriver.chrome.driver", "src/test/resources/browserBinaries/chromedriver");
+            // setProperty("webdriver.chrome.driver", "src/test/resources/browserBinaries/chromedriver");
+            setProperty("webdriver.chrome.driver", "/usr/bin/chromedriver");
         }
         if (IS_OS_MAC) {
             setProperty("webdriver.chrome.driver", "src/test/resources/browserBinaries/chromedriverMac");

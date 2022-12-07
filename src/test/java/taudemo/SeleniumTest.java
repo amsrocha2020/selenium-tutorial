@@ -20,11 +20,9 @@ import static org.junit.jupiter.api.TestInstance.Lifecycle.PER_CLASS;
 @TestInstance(PER_CLASS)
 public class SeleniumTest {
 
-    private BrowserGetter browserGetter = new BrowserGetter();
-    //Para escolher o browser para abir
+    private final BrowserGetter browserGetter = new BrowserGetter();
 
     private WebDriver driver;
-    //Para interagir com o browser
 
     @BeforeAll
     public void beforeAll() {
@@ -42,10 +40,12 @@ public class SeleniumTest {
         driver.get("https://www.example.com");
         assertEquals(expectedComTitle, driver.getTitle());
     }
+
     @Test
     public void openTheOrgPageAndCheckTheTitle() {
         String expectedOrgTitle = "Example Domain";
         driver.get("https://www.example.org");
         assertEquals(expectedOrgTitle, driver.getTitle());
+
     }
 }
